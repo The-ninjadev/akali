@@ -1,0 +1,132 @@
+header {
+    width: 100%;
+    padding-top: 20px;
+    
+}
+
+.navbar {
+    max-width: 1440px;
+    margin: 0  auto;
+    display: flex;
+    padding: 0 16px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.nav-menu {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+
+    li {
+        margin-left: 24px;
+        position: relative;
+        overflow: hidden;
+        padding: 34px 0;
+        
+
+        @include responseve()  {
+            display: none;
+        }
+
+
+        &:hover .kunai {
+            transition: .7s  ease;
+            top: 2px;
+        }
+        &:hover .nav-link {
+            color: $green;
+            transition: .7s ease;
+        }
+
+    }
+
+    .kunai {
+        position: absolute;
+        top: -50px;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 45px;
+    }
+   
+}
+
+/*
+.nav-list li:hover .kunai {
+    transition: .4s  ease-in-out;
+    top: 2px;
+}
+*/
+
+
+.bx {
+    @include responseve() {
+        display: block;
+    }
+   
+    display: none;
+
+    .bx1 {
+        width: 45px;
+        height: 2px;
+        background-color: $white;
+        margin-bottom: 10px;
+    }
+}
+
+.nav-link {
+    display: inline-block;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 200;
+    color: $gray;
+    padding: 8px 16px;
+
+}
+
+.better {
+    color: $green-dark;
+    display: inline-block;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 200;
+    padding: 8px 16px;
+
+    &:hover {
+        transition: .7s ease;
+        color: $blue;
+    }
+}
+
+.nav-social {
+    display: flex;
+    align-items: center;
+
+    @include responseve()  {
+        display: none;
+    }
+   
+
+    i {
+        color: $white;
+        margin-left: 6px;
+        font-size: 18px;
+        padding: 10px;
+
+        
+        &:hover {
+   
+            color: $green-dark;
+            transition: .7s ease;
+            transform: translate3d(0,-4px,0);
+        }
+    }
+        
+    
+}

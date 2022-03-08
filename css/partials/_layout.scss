@@ -1,0 +1,226 @@
+
+
+.container {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+
+    padding: 30px 16px;
+    
+    display: flex;
+    flex-direction: row;
+
+    @include responseve() {
+        flex-direction: column;
+        flex-direction: column-reverse;
+        align-items: center;
+        height: auto;
+    }
+       
+}
+
+.container-item1 {
+    max-width: 570px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @include responseve() {
+        display: flex;
+       align-items: center;
+       text-align: center;
+    }
+   
+
+    h1 {
+        font-size: 160px;
+        color: $white;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 800;
+        font-style: italic;
+
+       
+    }
+
+    h3 {
+        margin-top: -50px;
+        font-size: 50px;
+        color: $green-dark;
+        font-weight: 200;
+        font-family: 'Yellowtail', cursive;
+    }
+}
+
+.container-item2 {
+    display: flex;
+    align-items: center;
+}
+
+
+    
+    
+.akali {
+    
+    width: 105%;
+    height: 80%;
+    transform: translate3d(0,-150px,0);
+    object-fit: cover;
+
+    @include responseve()  {
+       width: 60%;
+       margin: 0 auto;
+       transform: translate3d(0,0,0);
+    }
+}
+
+.btn-area {
+    margin-top: 26px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 8px 62px;
+    border-radius: 3px;
+    transform: skewX(-10deg);
+    text-transform: uppercase;
+    background: $green;
+    position: relative;
+    transition: .7s ease;
+    font-weight: 500;
+   
+
+    &::after {
+        content: '';
+        opacity: 0;
+        position: absolute;
+        display: block;
+        top: -2px;
+        left: -2px;
+        width: 25%;
+        height: 70%;
+        border-radius: 3px;
+        border-top: 4px solid $white;
+        border-left: 4px solid $white;
+        transition: .7s ease;
+    }
+
+    &::before {
+        content: '';
+        opacity: 0;
+        position: absolute;
+        display: block;
+        bottom: -2px;
+        right: -2px;
+        width: 25%;
+        height: 70%;
+        border-radius: 3px;
+        border-bottom: 4px solid $white;
+        border-right: 4px solid $white;
+        transition: .7s ease;
+    }
+
+    &:hover {
+        transform: skew(-10deg) scale(1.05);
+       background: $green-dark;
+        &::after {
+            opacity: 1;
+        }
+        &::before {
+            opacity: 1;
+        }
+
+    }
+}
+
+.btn-secondary {
+    display: inline-block;
+    padding: 7px 32px;
+    border-radius: 3px;
+    transform: skewX(-10deg);
+    text-transform: uppercase;
+    position: relative;
+    transition: .7s ease;
+    background: transparent;
+    border: 2px solid $green;
+    margin-left: 10px;
+    font-weight: 500;
+    
+
+
+    &::after {
+        content: '';
+        
+        position: absolute;
+        display: block;
+        top: -1px;
+        left: -1px;
+        z-index: -1;
+        width: 0%;
+        height: 104%;
+        background: linear-gradient(255deg, #A7BB19 0%, #97AA16 100%);
+        transition: .7s ease;
+
+    }
+
+
+    &:hover {
+        transform: skew(-10deg) scale(1.05);
+        &::after {
+            width: 101%;
+        }
+    }
+   
+}
+
+.flex img {
+    margin: 18px 18px 0 0 ;
+}
+
+
+
+.bg-video {
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    
+    object-fit: cover;
+
+    &::after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: linear-gradient(105.79deg, #0C0F14 32.44%, rgba(12, 15, 20, 0.8) 54.27%, #0C0F14 76.03%);
+        
+    }
+}
+
+.bg-loader {
+    @include responseve() {
+        height: 190vh;
+        overflow: hidden;
+        transform: translate3d(0,-250px,0);
+
+
+    }
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    top: 0;
+    z-index: 10000;
+    background: linear-gradient(255deg, $green 0%, $green-ld 100%);
+}
